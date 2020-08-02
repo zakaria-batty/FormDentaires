@@ -1,0 +1,19 @@
+body{
+    margin:0; 
+    padding: 0;
+    width: 100%;
+    font-size: 19px; 
+    line-height: 30px; 
+    min-height: 100%; 
+}
+
+a {text-decoration: none;}
+li {list-style: none;}
+
+input:focus, a:focus,button:focus{
+    outline: none;
+}
+
+@import "_variables";
+@import "_formule";
+@import "_mixin";

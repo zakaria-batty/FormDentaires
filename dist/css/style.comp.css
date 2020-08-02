@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 19px;
+  line-height: 30px;
+  min-height: 100%; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style: none; }
+
+input:focus, a:focus, button:focus {
+  outline: none; }
+
+.content .nav-content {
+  text-align: center; }
+  .content .nav-content .errors {
+    color: red; }
+  .content .nav-content .block {
+    width: 44%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    background: #eeeeee;
+    box-shadow: 0px 3px 7px #e0dede;
+    box-sizing: border-box;
+    border-radius: 10px; }
+    .content .nav-content .block .formulaire {
+      padding: 26px 20px; }
+      .content .nav-content .block .formulaire .formule {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center; }
+        .content .nav-content .block .formulaire .formule .les-input {
+          padding: 8px 19px; }
+          .content .nav-content .block .formulaire .formule .les-input .label {
+            font-size: 17px;
+            font-family: cursive;
+            float: left; }
+          .content .nav-content .block .formulaire .formule .les-input .input {
+            padding: 7px;
+            border-radius: 9px;
+            border: 1px solid white;
+            width: 96%;
+            font-size: 17px;
+            font-family: monospace; }
+          .content .nav-content .block .formulaire .formule .les-input .input:hover {
+            border: 2px solid #666464; }
+      .content .nav-content .block .formulaire .btn {
+        width: 46%;
+        padding: 9px;
+        margin-top: 24px;
+        border: 1px solid orange;
+        border-radius: 9px;
+        background: linear-gradient(to right, #e8505b, orange);
+        font-size: 17px;
+        font-family: monospace; }
+      .content .nav-content .block .formulaire .btn:hover {
+        background: #ffa50047; }
+
+.box {
+  position: relative;
+  bottom: 325px;
+  display: none; }
+  .box .content {
+    width: 26%;
+    background: #56545459;
+    margin: 0 auto;
+    font-size: 17px;
+    height: 117px;
+    padding: 16px;
+    box-shadow: 0px 4px 24px white; }
+    .box .content .box-close {
+      float: right;
+      text-align: center;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      font-family: sans-serif;
+      background: red;
+      margin: -16px -16px; }

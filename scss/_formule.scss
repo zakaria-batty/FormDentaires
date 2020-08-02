@@ -1,0 +1,140 @@
+
+.content{
+    .nav-content{
+        text-align: center;
+        width: 100%;
+        margin-top: 39px;
+        .block{
+            width: 44%;
+            display: flex;
+            justify-content: space-evenly;
+            margin: 0 auto;
+            background: $color-bck;
+            box-shadow: 0px 3px 7px #e0dede;
+            box-sizing: border-box;
+            border-radius: 10px;
+                     .formulaire{
+                        padding: 26px 20px;
+                      .formule{
+                            display: flex;
+                            flex-wrap: wrap;
+                            flex-direction: row;
+                            // justify-content: center;
+                       .les-input{
+                            padding: 8px 19px;
+                        .label{
+                            font-size: 17px;
+                            font-family: cursive;
+                            float: left;
+                        }
+                        .input{
+                          @extend %input; 
+                          width: 96%;                    
+                        }
+                        .input:hover{border: 2px solid $hover-input}
+                    }
+                }
+                .btn{
+                    width: 73%;
+                    padding: 9px;
+                    margin-top: 24px;
+                    border: 1px solid $color-bck2;
+                    // border-radius: 9px;
+                    background: linear-gradient(to right, $color-btn, $color-bck2);
+                    font-size: 17px;
+                    font-family: monospace;
+                    }
+                    .btn:hover {
+                        background: $hover-btn;
+                        }
+            }
+        }
+    }
+}
+// .sect-choices{
+//     display: flex;
+//     flex-wrap: wrap;
+//     flex-direction: row;
+//     justify-content: center;
+//     .questions {
+//         p {
+//             font-weight: 700;
+//             color: #7F7F7F;
+//         }
+//     }
+//     .radio{
+//         font-size: 15px;
+//         font-family: arial;
+//         font-weight: 500;
+//         text-transform: capitalize;
+//         display: inline-block;
+//         vertical-align: middle;
+//         position: relative;
+//         padding-left: 26px;
+//         cursor: pointer;
+//         input[type="radio"]{
+//             display:none;
+//         }
+//         span{
+//             height: 14px;
+//             width: 14px;
+//             border-radius: 50%;
+//             border: 3px solid $color-bck2;
+//             display: block;
+//             position: absolute;
+//             top: 5px;
+//             left: 0px;
+//         }
+//         span:after{
+//             content: "";
+//             height: 6px;
+//             width: 6px;
+//             background: $color-bck2;
+//             display: block;
+//             position: absolute;
+//             left: 50%;
+//             top: 50%;
+//             transform: translate(-50%, -50%) scale(0);
+//             border-radius: 50%;
+//             transition:  300ms ease-in-out 0s;
+//         }
+//         input[type="radio"]:checked ~ span:after{
+//             transform: translate(-50%, -50%) scale(1.5);
+//         }
+//     }
+
+// }
+
+// .consultation{
+//     padding-bottom: 15px;
+//     border-bottom: 2px solid gray;
+//     // border-radius: 20px;
+// }
+.input-number{
+    @extend %input; 
+    width: 48%;
+}
+
+.box{
+    .content{
+         width: 39%;
+         background: $color-bck;
+         margin: 0 auto;
+         font-size: 17px;
+         height: 117px;
+         padding: 16px;
+            .table{
+                margin: -7px -230px;
+                text-align: center;
+                .th{
+                    @extend %table;
+                }
+                .td{
+                   @extend %table;
+                }
+            }
+    } 
+}
+
+
+  
