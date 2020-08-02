@@ -65,7 +65,7 @@
                             <div class="questions">
                                 <div class="formule">
                                     <div class="les-input" id="">
-                                        <select class="input" name="dents" id="activities" onchange="selectOption();" style=" width: 217px;">
+                                        <select class="input" name="dents" id="activities" style=" width: 217px;">
                                             <option value="">Choisir...</option>
                                             <option value="Couronnes">Couronnes</option>
                                             <option value="Bridge 3elements">Bridge 3elements</option>
