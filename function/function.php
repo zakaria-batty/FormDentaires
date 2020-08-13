@@ -4,103 +4,77 @@
 function Montant()
 {
     global $sum;
-    // A function for calculating age
-    $date = $_POST['date-naissance'];
-    $today = date("d-m-Y");
-    $diff = date_diff(date_create($date), date_create($today));
-    $age = $diff->format('%y');
     // variables
     $Rbsmnt_CQ = 70 / 100;
-    $tarif_conv = $_POST['tarif-convotion'];
-    $tarif_couronnes = 107.5;
-    $tarif_bridge = 279.5;
-    $tarif_appareil = 64.5;
-    $tarif_appareil14 = 182.5;
-    $tarif_travaux = 193.5;
-    $Nbr = isset($_POST['nbr']) ? $_POST['nbr'] : NULL;
-
+    $Chirurgien_dentiste = 21;
+    $stomatoloque8S1 = 28;
+    $stomatoloque_S2 = 23;
 
     // Coditions for choosing doctors
     switch ($_POST['dents']) {
-        case 'Couronnes':
-            $sum = $tarif_couronnes * $Rbsmnt_CQ *  $Nbr;
+        case 'Chirurgien dentiste':
+            $sum = $Chirurgien_dentiste * $Rbsmnt_CQ;
             break;
-        case 'Bridge 3elements':
-            $sum = $tarif_bridge * $Rbsmnt_CQ *  $Nbr;
+        case 'stomatoloque (secteur 1)':
+            $sum = $stomatoloque8S1 * $Rbsmnt_CQ;
             break;
-        case 'Appareil dentaire(1a3dents)':
-            $sum = $tarif_appareil * $Rbsmnt_CQ;
-            break;
-        case 'Appareil dentaire(14dents)':
-            $sum = $tarif_appareil14 * $Rbsmnt_CQ;
-            break;
-        case 'Travaux dorthodontie':
-            if ($age > 16) :
-                $sum = $tarif_travaux * $Rbsmnt_CQ *  $Nbr;
-            else :
-                $sum = $tarif_conv;
-            endif;
+        case 'stomatoloque (secteur 2)':
+            $sum = $stomatoloque_S2 * $Rbsmnt_CQ;
             break;
         default:
             break;
     }
-    // condition();
     echo $sum . " €";
-    // var_dump($_POST);
 }
 function Garantie()
 {
-    // A function for calculating age
-    $date = $_POST['date-naissance'];
-    $today = date("d-m-Y");
-    $diff = date_diff(date_create($date), date_create($today));
-    $age = $diff->format('%y');
+    global $sum1;
     // variables
     $Garantie = isset($_POST['Garantie']) ? $_POST['Garantie'] : NULL;
-    $tarif_conv = $_POST['tarif-convotion'];
-    $tarif_couronnes = 107.5;
-    $tarif_bridge = 279.5;
-    $tarif_appareil = 64.5;
-    $tarif_appareil14 = 182.5;
-    $tarif_travaux = 193.5;
-    $Nbr = isset($_POST['nbr']) ? $_POST['nbr'] : NULL;
+    $Rbsmnt_CQ = 70 / 100;
+    $Chirurgien_dentiste = 21;
+    $stomatoloque8S1 = 28;
+    $stomatoloque_S2 = 23;
 
-    switch (isset($_POST['Garantie'])) {
-        case 'Couronnes':
-            $sum = $tarif_couronnes * $Garantie / 100 *  $Nbr;
+    switch ($_POST['dents']) {
+        case 'Chirurgien dentiste':
+            $sum1 = $Chirurgien_dentiste * $Garantie / 100;
             break;
-        case 'Bridge 3elements':
-            $sum = $tarif_bridge * $Garantie / 100 *  $Nbr;
+        case 'stomatoloque (secteur 1)':
+            $sum1 = $stomatoloque8S1 * $Garantie / 100;
             break;
-        case 'Appareil dentaire(1a3dents)':
-            $sum = $tarif_appareil * $Garantie / 100;
-            break;
-        case 'Appareil dentaire(14dents)':
-            $sum = $tarif_appareil14 * $Garantie / 100;
-            break;
-        case 'Travaux dorthodontie':
-            if ($age > 16) :
-                $sum = $tarif_travaux *  $Garantie / 100 *  $Nbr;
-            else :
-                $sum = $tarif_conv;
-            endif;
+        case 'stomatoloque (secteur 2)':
+            $sum1 = $stomatoloque_S2 * $Garantie / 100;
             break;
         default:
             break;
     }
-    echo $sum . " €";
+    echo $sum1 . " €";
 }
 
 // function for calculation total
-function total()
+// function for calculation Rembourse
+function Rembourse()
 {
-    $Garantie = isset($_POST['Garantie']) ? $_POST['Garantie'] : NULL;
+    global $sum;
+    global $sum1;
+    global $sum2;
     $tarif_conv = $_POST['tarif-convotion'];
-    $sum1 = $tarif_conv +  $Garantie;
+    $Rembourse = $sum1 +  $sum;
 
-    if ($sum1 <  $tarif_conv) :
-        echo  $tarif_conv;
+    if ($Rembourse > $tarif_conv) :
+        $sum2 = $tarif_conv;
     else :
-        echo $sum1;
+        $sum2 = $Rembourse;
     endif;
+    echo $sum2 . " €";;
+}
+// function for calculation Total
+function Total()
+{
+    global $sum2;
+
+    $tarif_conv = $_POST['tarif-convotion'];
+    $sum3 = $tarif_conv - $sum2;
+    echo $sum3 . " €";;
 }

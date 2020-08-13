@@ -59,14 +59,12 @@ input:focus, a:focus, button:focus {
   width: 48%; }
 
 .box .content {
-  width: 39%;
-  background: #eeeeee;
   margin: 0 auto;
   font-size: 17px;
   height: 117px;
   padding: 16px; }
   .box .content .table {
-    margin: -7px -230px;
+    margin: 0 auto;
     text-align: center; }
 
 .content .nav-content .block .formulaire .formule .les-input .input, .input-number {
@@ -77,4 +75,4 @@ input:focus, a:focus, button:focus {
 
 .box .content .table .th, .box .content .table .td {
   padding: 15px 36px;
-  background: white; }
+  background: #eeeeee; }

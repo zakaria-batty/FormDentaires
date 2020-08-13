@@ -12,35 +12,38 @@
     <section class="content">
         <div class="nav-content">
 
-            <article class="block">
-                <?php
-                if (isset($_POST["Nom"])) {
-                    include("./function/function.php");
-                ?>
-                    <article class="box affiche">
-                        <div class="content">
-                            <table class="table">
-                                <tr>
-                                    <th class="th">Montant Remboursé</th>
-                                    <th class="th">Garantie</th>
-                                    <th class="th">Total</th>
-                                </tr>
-                                <tr>
-                                    <td class="td"><?php Montant(); ?></td>
-                                    <td class="td"><?php if ($_POST['Garantie']) : Garantie();
-                                                    else : echo  0 . ' €';
-                                                    endif; ?></td>
-                                    <td class="td"><?php if ($_POST['Garantie']) : echo total(). ' €';
-                                                    else : echo  0 . ' €';
-                                                    endif; ?></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </article>
-                <?php
-                } else {
-                ?>
-
+            <?php
+            if (isset($_POST["Nom"])) {
+                include("./function/function.php");
+            ?>
+                <article class="box affiche">
+                    <div class="content">
+                        <table class="table">
+                            <tr>
+                                <th class="th">Remboursement CQ</th>
+                                <th class="th">Garantie</th>
+                                <th class="th">Montant Remboursé</th>
+                                <th class="th">Total</th>
+                            </tr>
+                            <tr>
+                                <td class="td"><?php Montant(); ?></td>
+                                <td class="td"><?php if ($_POST['Garantie']) : Garantie();
+                                                else : echo  0 . ' €';
+                                                endif; ?></td>
+                                <td class="td"><?php if ($_POST['Garantie']) : Rembourse();
+                                                else : echo  0 . ' €';
+                                                endif; ?></td>
+                                <td class="td"><?php if ($_POST['Garantie']) : Total();
+                                                else : echo  0 . ' €';
+                                                endif; ?></td>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+            <?php
+            } else {
+            ?>
+                <article class="block">
                     <!-- formulaire -->
                     <form class="formulaire" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
 
@@ -66,12 +69,10 @@
                                 <div class="formule">
                                     <div class="les-input" id="">
                                         <select class="input" name="dents" id="activities" style=" width: 217px;">
-                                            <option value="">Choisir...</option>
-                                            <option value="Couronnes">Couronnes</option>
-                                            <option value="Bridge 3elements">Bridge 3elements</option>
-                                            <option value="Appareil dentaire(1a3dents)">Appareil dentaire (1 a 3 dents)</option>
-                                            <option value="Appareil dentaire(14dents)">Appareil dentaire ( 14 dents)</option>
-                                            <option value="Travaux dorthodontie">Travaux d'orthodontie</option>
+                                            <option value="">Consultation</option>
+                                            <option value="Chirurgien dentiste">Chirurgien dentiste</option>
+                                            <option value="stomatoloque (secteur 1)">stomatoloque (secteur 1)</option>
+                                            <option value="stomatoloque (secteur 2)">stomatoloque (secteur 2)</option>
                                         </select>
                                     </div>
                                     <div class="les-input" id="tarif">
@@ -94,9 +95,6 @@
                                         <label class="label" for="date_début">Date de naissance*</label><br>
                                         <input class="input" type="date" name="date-naissance" style=" width: 204px; height: 19px; position:relative; right:5px;" required>
                                     </div>
-                                    <div class="les-input" >
-                                        <input class="input" type="text" id="Nbr" name="nbr"  style="display: none;">
-                                    </div>
                                 </div>
                             </div>
 
@@ -106,11 +104,9 @@
 
                     </form>
                 <?php } ?>
-            </article>
+                </article>
         </div>
     </section>
-    <script src="js/script.js"></script>
-
 </body>
 
 </html>
