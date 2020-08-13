@@ -30,10 +30,10 @@
                                 <td class="td"><?php if ($_POST['Garantie']) : Garantie();
                                                 else : echo  0 . ' €';
                                                 endif; ?></td>
-                                <td class="td"><?php if ($_POST['Garantie']) : Rembourse();
+                                <td class="td"><?php if ($_POST['Garantie']) : echo Rembourse() . ' €';
                                                 else : echo  0 . ' €';
                                                 endif; ?></td>
-                                <td class="td"><?php if ($_POST['Garantie']) : Total();
+                                <td class="td"><?php if ($_POST['Garantie']) : echo Total() . ' €';
                                                 else : echo  0 . ' €';
                                                 endif; ?></td>
                             </tr>
